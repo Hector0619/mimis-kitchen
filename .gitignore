@@ -1,0 +1,3 @@
+# The pantry stays private: booking data is never committed.
+*.db
+node_modules/
