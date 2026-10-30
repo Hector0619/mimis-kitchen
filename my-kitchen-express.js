@@ -130,6 +130,7 @@ kitchen.use((req, res) => {
   res.status(404).send('Sorry, this kitchen does not serve that dish!');
 });
 
-kitchen.listen(3000, () => {
-  console.log('Kitchen open at http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+kitchen.listen(PORT, () => {
+  console.log(`Kitchen open at http://localhost:${PORT}`);
 });

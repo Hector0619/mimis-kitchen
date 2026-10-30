@@ -1,1 +1,1 @@
-{"dependencies":{"express":"^5.3.0"},"description":"Booking API for a massage business — Node.js, Express, SQLite","main":"my-kitchen-express.js","name":"mimis-kitchen","scripts":{"start":"node my-kitchen-express.js"},"version":"1.0.0"}
+{"dependencies":{"express":"^5.3.0"},"description":"Booking API for a massage business — Node.js, Express, SQLite","engines":{"node":">=22.5"},"main":"my-kitchen-express.js","name":"mimis-kitchen","scripts":{"start":"node my-kitchen-express.js"},"version":"1.0.0"}
