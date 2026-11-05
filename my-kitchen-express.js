@@ -33,8 +33,8 @@ const kitchen = express();
 kitchen.use(express.json());
 // The dining room closet: the kitchen now hands out the pages in the
 // public folder, so the app lives at the kitchen's own address.
-// __dirname points at the app's own folder, so it works no matter where the container starts the app.
-kitchen.use(express.static(path.join(__dirname, 'public'));
+// __dirname points at the app's own folder, so it works no matter where the container starts the app).
+kitchen.use(express.static(path.join(__dirname, 'public')));
 
 // The guest list (CORS), as one manager rule instead of headers on
 // every single answer. The browser's preflight knock (OPTIONS) is
