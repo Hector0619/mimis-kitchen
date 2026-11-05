@@ -14,6 +14,7 @@ const menu = [
   { service: 'Lomi Lomi Massage', price: 60 },
   { service: 'Prenatal Massage', price: 45 }
 ];
+
 // The pantry: same real database file, same table.
 const pantry = new DatabaseSync('mimis-kitchen.db');
 pantry.exec(`
