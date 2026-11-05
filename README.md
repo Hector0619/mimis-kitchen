@@ -42,3 +42,4 @@ if it doesn't exist yet.
 - Node.js + Express (named routes, `express.json()`, middleware)
 - SQLite via `node:sqlite`, with prepared statements (`?` placeholders, so
   values are copied in exactly and never treated as instructions)
+Live booking page: https://mimis-kitchen-04fff.containers.snapdeploy.app/finale.html
