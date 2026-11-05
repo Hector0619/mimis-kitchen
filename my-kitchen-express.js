@@ -30,6 +30,9 @@ const kitchen = express();
 // The manager reads the order slip (JSON body) for us — no more
 // collecting 'data' chunks by hand. The slip lands on req.body.
 kitchen.use(express.json());
+// The dining room closet: the kitchen now hands out the pages in the
+// public folder, so the app lives at the kitchen's own address.
+kitchen.use(express.static('public'));
 
 // The guest list (CORS), as one manager rule instead of headers on
 // every single answer. The browser's preflight knock (OPTIONS) is
