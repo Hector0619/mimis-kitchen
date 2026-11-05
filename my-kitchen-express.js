@@ -4,6 +4,7 @@
 // and the manager sends them to the right door automatically.
 const express = require('express');
 const { DatabaseSync } = require('node:sqlite');
+const path = require('path');
 
 const menu = [
   { service: 'Deep Tissue Massage', price: 80 },
@@ -32,7 +33,7 @@ const kitchen = express();
 kitchen.use(express.json());
 // The dining room closet: the kitchen now hands out the pages in the
 // public folder, so the app lives at the kitchen's own address.
-kitchen.use(express.static('public'));
+kitchen.use(express.static(path.join(__dirname, 'public'));
 
 // The guest list (CORS), as one manager rule instead of headers on
 // every single answer. The browser's preflight knock (OPTIONS) is
