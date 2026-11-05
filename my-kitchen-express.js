@@ -14,15 +14,12 @@ const menu = [
   { service: 'Lomi Lomi Massage', price: 60 },
   { service: 'Prenatal Massage', price: 45 }
 ];
-
-
 // The pantry: same real database file, same table.
 const pantry = new DatabaseSync('mimis-kitchen.db');
 pantry.exec(`
   CREATE TABLE IF NOT EXISTS bookings (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    
+    name TEXT,    
     service TEXT,
     date TEXT
   )
