@@ -15,12 +15,14 @@ const menu = [
   { service: 'Prenatal Massage', price: 45 }
 ];
 
+
 // The pantry: same real database file, same table.
 const pantry = new DatabaseSync('mimis-kitchen.db');
 pantry.exec(`
   CREATE TABLE IF NOT EXISTS bookings (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
+    
     service TEXT,
     date TEXT
   )
@@ -33,6 +35,7 @@ const kitchen = express();
 kitchen.use(express.json());
 // The dining room closet: the kitchen now hands out the pages in the
 // public folder, so the app lives at the kitchen's own address.
+// __dirname points at the app's own folder, so it works no matter where the container starts the app.
 kitchen.use(express.static(path.join(__dirname, 'public'));
 
 // The guest list (CORS), as one manager rule instead of headers on
