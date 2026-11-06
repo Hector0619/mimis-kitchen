@@ -78,10 +78,8 @@
   <h1>Book Your Service</h1>
   <p>Look like royalty. Feel like royalty.</p>
   <p>Pick a service, then book it:</p>
-  <div class="row">
-    <div class="card" id="card-sw" onclick="pick('card-sw', 'Swedish Massage')">Swedish Massage</div>
-    <div class="card" id="card-dt" onclick="pick('card-dt', 'Deep Tissue Massage')">Deep Tissue Massage</div>
-    <div class="card" id="card-pr" onclick="pick('card-pr', 'Prenatal Massage')">Prenatal Massage</div>
+  <div class="row" id="services">
+    <!-- the cards will be built here from the kitchen's menu -->
   </div>
   <p id="choice">You picked: none yet</p>
   <div class="center">
@@ -100,11 +98,12 @@
     const KITCHEN = ''; // same kitchen, same address — no full URL needed
     let chosenService = '';
 
-    function pick(id, service) {
-      document.getElementById('card-sw').classList.remove('picked');
-      document.getElementById('card-dt').classList.remove('picked');
-      document.getElementById('card-pr').classList.remove('picked');
-      document.getElementById(id).classList.add('picked');
+    function pick(card, service) {
+      let cards = document.querySelectorAll('.card');
+      for (let c of cards) {
+        c.classList.remove('picked');
+      }
+      card.classList.add('picked');
       chosenService = service;
       document.getElementById('choice').textContent = 'You picked: ' + service;
     }
@@ -137,6 +136,21 @@
         shelf.appendChild(item);
       }
     }
+
+    async function loadServices() {
+      let response = await fetch(KITCHEN + '/services');
+      let menu = await response.json();
+      let shelf = document.getElementById('services');
+      for (let dish of menu) {
+        let card = document.createElement('div');
+        card.className = 'card';
+        card.textContent = dish.service + ' — $' + dish.price;
+        card.onclick = function() { pick(card, dish.service); };
+        shelf.appendChild(card);
+      }
+    }
+
+    loadServices();
   </script>
 </body>
 </html>
