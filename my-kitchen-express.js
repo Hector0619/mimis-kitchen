@@ -1,3 +1,4 @@
+// Deploy retry - Nov 6, 2026.
 // Our kitchen, rebuilt with Express — Express Lesson 1
 // Same pantry, same dishes, same rules — just a manager at the front door.
 // Express = the manager: guests say WHERE they want to go (the route),
