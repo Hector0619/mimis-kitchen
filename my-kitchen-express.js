@@ -13,7 +13,11 @@ const menu = [
   { service: 'Therapeutic Massage', price: 50 },
   { service: 'Luxury Group Massage', price: 100 },
   { service: 'Lomi Lomi Massage', price: 60 },
-  { service: 'Prenatal Massage', price: 45 }
+  { service: 'Prenatal Massage', price: 45 },
+  { service: 'Lip Fillers .5ML', price: 155 },
+  { service: 'Lip Fillers 1ML', price: 175 },
+  { service: 'Lip Fillers 2ML', price: 265 },
+  { service: 'Bestie Bundle 1ML', price: 299 }
 ];
 
 // The pantry: same real database file, same table.
